@@ -22,7 +22,5 @@ public class LocalDate_Demo {
 		System.out.println(date.format(DateTimeFormatter.ofPattern("yyyyy.MMMMM.dd GGG")));
 		System.out.println(date.format(DateTimeFormatter.ofPattern("EEE, d MMM yyyy")));
 		System.out.println(date.format(DateTimeFormatter.ofPattern("MMM, yyyy")));
-
 	}
-
 }
