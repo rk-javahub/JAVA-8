@@ -5,3 +5,4 @@ Features List.<br/>
 2) Default methods.<br/>
 3) Predicate.<br/>
 4) LocaDate and LocalTime.<br/>
+5) Stream.<br/>
