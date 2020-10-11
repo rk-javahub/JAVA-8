@@ -13,7 +13,6 @@ class Demo2 implements Interf2 {
 }
 
 public class TestCase3_IntMethodWithStringArgument {
-
 	public static void main(String[] args) {
 		// Calling length() by using traditional approach (Till java 1.7)
 		Interf2 i = new Demo2();
@@ -23,6 +22,7 @@ public class TestCase3_IntMethodWithStringArgument {
 		Interf2 i2 = (s) -> {
 			return s.length();
 		};
+		
 		System.out.println(i2.length("Sachin"));
 	}
 }
