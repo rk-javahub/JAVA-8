@@ -27,10 +27,9 @@ public class TestCase3_Filter_and_Map_on_String {
 
 		System.out.println("\nCount number of elemnts in list");
 		countNumberOfElements(ls);
-		
+
 		System.out.println("\nCount number of elemnts in list with length greater than 5");
 		countNumberOfElementsGreaterThan5(ls);
-
 
 	}
 
