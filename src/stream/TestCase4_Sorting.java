@@ -28,7 +28,5 @@ public class TestCase4_Sorting {
 		System.out.println("Customized sorting");
 		List<Integer> ls2 = ls.stream().sorted((i1, i2) -> -i1.compareTo(i2)).collect(Collectors.toList());
 		System.out.println(ls2);
-
 	}
-
 }
