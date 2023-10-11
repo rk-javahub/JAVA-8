@@ -8,13 +8,11 @@ public class SumOfElementsInList {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		List<Integer> ls=Arrays.asList(1,2,3,4,5,6,7);
-		
-		Optional<Integer> sum=ls.stream().reduce((a,b)->a+b);
-		
-		System.out.println("Sum of elements is :"+sum.get());
-		
-		
+		List<Integer> ls = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+
+		Optional<Integer> sum = ls.stream().reduce((a, b) -> a + b);
+
+		System.out.println("Sum of elements is :" + sum.get());
 
 	}
 
