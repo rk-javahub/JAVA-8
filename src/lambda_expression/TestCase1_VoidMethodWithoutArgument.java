@@ -15,7 +15,7 @@ class Demo implements Interf {
 public class TestCase1_VoidMethodWithoutArgument {
 
 	public static void main(String[] args) {
-		// Calling m1() by using traditional approach (Till java 1.7)
+		// Calling m1() by using tradi̥tional approach (Till java 1.7)
 		Interf i = new Demo();
 		i.m1();
 
