@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 public class GetEvenElementFromListAndMultiplyItByTen {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		List<Integer> ls = new ArrayList<>();
 		ls.add(2);
 		ls.add(3);
@@ -15,9 +14,11 @@ public class GetEvenElementFromListAndMultiplyItByTen {
 		ls.add(5);
 		ls.add(6);
 
-		List<Integer> updatedList = ls.stream().filter(n -> (n % 2) == 0).map(n -> n * 10).collect(Collectors.toList());
+		List<Integer> updatedList = ls.stream().filter(n -> (n % 2) == 0)
+				                               .map(n -> n * 10)
+				                               .collect(Collectors.toList());
 
-		System.err.println(updatedList);
+		System.out.println(updatedList);
 
 	}
 
