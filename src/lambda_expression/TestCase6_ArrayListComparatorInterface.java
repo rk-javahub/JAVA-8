@@ -44,8 +44,15 @@ public class TestCase6_ArrayListComparatorInterface {
 
 		System.out.println("Before sorting : " + al);
 
-		Collections.sort(al, (ob1, ob2) -> (ob1 > ob2) ? -1 : (ob1 < ob2) ? 1 : 0);
+		// Collections.sort(al, (ob1, ob2) -> (ob1 > ob2) ? -1 : (ob1 < ob2) ? 1 : 0);
 
-		System.out.println("After sorting : " + al);
+		Collections.sort(al, (obj1, obj2) -> obj1.compareTo(obj2));
+
+		System.out.println("After sorting in ascending order: " + al);
+
+		Collections.sort(al, (obj1, obj2) -> obj2.compareTo(obj1));
+
+		System.out.println("After sorting in descending order: " + al);
+
 	}
 }
