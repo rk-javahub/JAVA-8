@@ -1,14 +1,14 @@
 package lambda_expression;
 
 public class Employee {
-	private int empId;
+	private Integer empId;
 	private String empName;
 
-	public int getEmpId() {
+	public Integer getEmpId() {
 		return empId;
 	}
 
-	public void setEmpId(int empId) {
+	public void setEmpId(Integer empId) {
 		this.empId = empId;
 	}
 
@@ -18,6 +18,11 @@ public class Employee {
 
 	public void setEmpName(String empName) {
 		this.empName = empName;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + "]";
 	}
 
 }

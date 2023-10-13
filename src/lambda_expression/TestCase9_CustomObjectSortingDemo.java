@@ -28,11 +28,16 @@ public class TestCase9_CustomObjectSortingDemo {
 		al.add(e2);
 		al.add(e3);
 
-		System.out.println("Employees Before sorting " + al);
+		System.out.println("Employees before sorting " + al);
 
 		Collections.sort(al,
-				(emp1, emp2) -> (emp1.getEmpId() > emp2.getEmpId()) ? -1 : (emp1.getEmpId() < emp2.getEmpId()) ? 1 : 0);
+				(emp1, emp2) -> emp1.getEmpName().compareTo(emp2.getEmpName()));
 
-		System.out.println("Employees After sorting " + al);
+		System.out.println("Employees after sorting based on name " + al);
+		
+		Collections.sort(al,
+				(emp1, emp2) -> emp1.getEmpId().compareTo(emp2.getEmpId()));
+		
+		System.out.println("Employees after sorting based on employee id " + al);
 	}
 }
