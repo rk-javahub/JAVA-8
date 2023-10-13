@@ -20,6 +20,7 @@ public class TestCase1_VoidMethodWithoutArgument {
 		i.m1();
 
 		// Calling m1() by using lambda expression (Java 1.8)
+		// Demo class not required
 		Interf i1 = () -> System.out.println("Method m1 called using lambda expression.");
 		i1.m1();
 	}

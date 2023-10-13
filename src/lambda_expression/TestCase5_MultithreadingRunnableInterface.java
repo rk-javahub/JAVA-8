@@ -9,7 +9,6 @@ class Task implements Runnable {
 			try {
 				Thread.sleep(1555);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -36,15 +35,10 @@ public class TestCase5_MultithreadingRunnableInterface {
 			;
 		};
 
-		Thread t1 = new Thread(r1);
-		t1.start();
-		for (int i = 0; i < 5; i++) {
-			System.out.println("Main thread");
-			try {
-				Thread.sleep(1555);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
+		/*
+		 * Thread t1 = new Thread(r1); t1.start(); for (int i = 0; i < 5; i++) {
+		 * System.out.println("Main thread"); try { Thread.sleep(1555); } catch
+		 * (InterruptedException e) { e.printStackTrace(); } }
+		 */
 	}
 }

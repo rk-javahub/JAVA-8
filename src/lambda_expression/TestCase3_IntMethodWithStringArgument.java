@@ -22,7 +22,7 @@ public class TestCase3_IntMethodWithStringArgument {
 		Interf2 i2 = (s) -> {
 			return s.length();
 		};
-		
+
 		System.out.println(i2.length("Sachin"));
 	}
 }

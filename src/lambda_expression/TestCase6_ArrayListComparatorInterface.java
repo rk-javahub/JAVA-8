@@ -46,6 +46,6 @@ public class TestCase6_ArrayListComparatorInterface {
 
 		Collections.sort(al, (ob1, ob2) -> (ob1 > ob2) ? -1 : (ob1 < ob2) ? 1 : 0);
 
-		System.out.println("Afer sorting : " + al);
+		System.out.println("After sorting : " + al);
 	}
 }
