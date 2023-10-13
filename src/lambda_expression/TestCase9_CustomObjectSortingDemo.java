@@ -28,11 +28,11 @@ public class TestCase9_CustomObjectSortingDemo {
 		al.add(e2);
 		al.add(e3);
 
-		System.out.println("Before sorting " + al);
+		System.out.println("Employees Before sorting " + al);
 
 		Collections.sort(al,
 				(emp1, emp2) -> (emp1.getEmpId() > emp2.getEmpId()) ? -1 : (emp1.getEmpId() < emp2.getEmpId()) ? 1 : 0);
 
-		System.out.println("After sorting " + al);
+		System.out.println("Employees After sorting " + al);
 	}
 }
