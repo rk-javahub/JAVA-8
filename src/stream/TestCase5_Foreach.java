@@ -5,7 +5,8 @@ package stream;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * @author Rohit
@@ -13,18 +14,25 @@ import java.util.stream.Collectors;
  */
 public class TestCase5_Foreach {
 	public static void main(String[] args) {
-		List<Integer> ls = new ArrayList<Integer>();
-		ls.add(12);
-		ls.add(4);
-		ls.add(26);
-		ls.add(89);
-		ls.add(104);
-		ls.add(75);
+		System.out.println("---------------- Iterating over list using foreach -----------------------");
+		List<String> ls = new ArrayList<String>();
+		ls.add("Rohit");
+		ls.add("Sachin");
+		ls.add("Raju");
+		ls.add("Pramod");
+		ls.add("Santosh");
+		ls.add("Pradip");
 
 		System.out.println("List elements are: ");
 		ls.stream().forEach(System.out::println);
 
-		System.out.println("List elements are: ");
-		ls.stream().forEach(s -> System.out.println(s));
+		System.out.println("---------------- Iterating over map using foreach -----------------------");
+		Map<Integer, String> map = new HashMap<Integer, String>();
+		map.put(7, "Rohit");
+		map.put(17, "Sachin");
+		map.put(27, "Santosh");
+		System.out.println("Map elements are: ");
+		map.forEach((key, value) -> System.out.println(key + " " + value));
+
 	}
 }
