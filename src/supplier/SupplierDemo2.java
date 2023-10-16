@@ -5,7 +5,6 @@ package supplier;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Supplier;
 
 /**
  * @author r.a.ashok.kumbhar
@@ -13,7 +12,6 @@ import java.util.function.Supplier;
  */
 public class SupplierDemo2 {
 	public static void main(String[] args) {
-
 		List<String> ls = Arrays.asList();
 
 		String supplier = ls.stream().findAny().orElseGet(() -> "Hello rohit");
