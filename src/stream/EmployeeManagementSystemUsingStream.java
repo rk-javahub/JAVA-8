@@ -1,12 +1,10 @@
 package stream;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import static java.util.function.Predicate.isEqual;
 
 class Employee {
 	private String name;
@@ -56,7 +54,8 @@ class Employee {
 
 	@Override
 	public String toString() {
-		return "(name=" + name + ", designation=" + designation + ", salary=" + salary + ", city=" + city + ")";
+		return "Employee [name=" + name + ", designation=" + designation + ", salary=" + salary + ", city=" + city
+				+ "]";
 	}
 
 }
@@ -108,5 +107,17 @@ public class EmployeeManagementSystemUsingStream {
 		// display(p1.negate(), employees);
 		System.out.println(
 				"--------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+		// Sorting Employee based on name
+		System.out.println("Employees sorting based on employee name way 1: ");
+		employees.stream().sorted((o1, o2) -> o1.getName().compareTo(o2.getName())).forEach(System.out::println);
+
+		System.out.println("Employees sorting based on employee name way 2 using method reference: ");
+		employees.stream().sorted(Comparator.comparing(Employee::getName)).forEach(System.out::println);
+
+		// Sorting Employee based on name descending
+		System.out.println("Employees sorting based on employee name descending: ");
+		employees.stream().sorted((o1, o2) -> o2.getName().compareTo(o1.getName())).forEach(System.out::println);
+
 	}
 }
