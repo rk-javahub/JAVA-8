@@ -3,6 +3,8 @@ package stream;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -63,16 +65,16 @@ class Employee {
 public class EmployeeManagementSystemUsingStream {
 
 	public static void main(String[] args) {
-		Employee e = new Employee("Rohit", "Java Developer", 70000, "Pune");
-		Employee e1 = new Employee("Sachin", "Manager", 90000, "Banglore");
-		Employee e2 = new Employee("Vignesh", "Tester", 40000, "Pune");
-		Employee e3 = new Employee("Radhika", "Java Developer", 70000, "Hyderabad");
-		Employee e4 = new Employee("Aayush", "QA", 50000, "Chennai");
-		Employee e5 = new Employee("Raj", "Analyst", 60000, "Pune");
-		Employee e6 = new Employee("Ratan", "CEO", 5000000, "Banglore");
+		Employees e = new Employees("Rohit", "Java Developer", 70000, "Pune");
+		Employees e1 = new Employees("Sachin", "Manager", 90000, "Banglore");
+		Employees e2 = new Employees("Vignesh", "Tester", 40000, "Pune");
+		Employees e3 = new Employees("Radhika", "Java Developer", 70000, "Hyderabad");
+		Employees e4 = new Employees("Aayush", "QA", 50000, "Chennai");
+		Employees e5 = new Employees("Raj", "Analyst", 60000, "Pune");
+		Employees e6 = new Employees("Ratan", "CEO", 5000000, "Banglore");
 
-		List<Employee> employees = new ArrayList<Employee>();
-		employees = (List<Employee>) Stream.of(e, e1, e2, e3, e4, e5, e6).collect(Collectors.toList());
+		List<Employees> employees = new ArrayList<Employees>();
+		employees = (List<Employees>) Stream.of(e, e1, e2, e3, e4, e5, e6).collect(Collectors.toList());
 
 		// Get employees who have designation as Manager
 		System.out.println("Employees with designation as Manager are: ");
@@ -112,12 +114,50 @@ public class EmployeeManagementSystemUsingStream {
 		System.out.println("Employees sorting based on employee name way 1: ");
 		employees.stream().sorted((o1, o2) -> o1.getName().compareTo(o2.getName())).forEach(System.out::println);
 
+		System.out.println(
+				"--------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+		System.out.println("Employees sorting based on employee salary way 1: ");
+		employees.stream().sorted(Comparator.comparingInt(Employees::getSalary)).forEach(System.out::println);
+
+		System.out.println(
+				"--------------------------------------------------------------------------------------------------------------------------------------------------------");
+
 		System.out.println("Employees sorting based on employee name way 2 using method reference: ");
-		employees.stream().sorted(Comparator.comparing(Employee::getName)).forEach(System.out::println);
+		employees.stream().sorted(Comparator.comparing(Employees::getName)).forEach(System.out::println);
+
+		System.out.println(
+				"--------------------------------------------------------------------------------------------------------------------------------------------------------");
 
 		// Sorting Employee based on name descending
 		System.out.println("Employees sorting based on employee name descending: ");
 		employees.stream().sorted((o1, o2) -> o2.getName().compareTo(o1.getName())).forEach(System.out::println);
+
+		System.out.println(
+				"--------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+		// Get employees based on location and sort by salary ascending
+		System.out.println("Get Employee based on lacation and sorting based on salary descending: ");
+		employees.stream().filter(l -> l.getCity().equals("Pune"))
+				.sorted(Comparator.comparingInt(Employees::getSalary).reversed()).forEach(System.out::println);
+
+		// Group employees based on city
+
+		System.out.println(
+				"--------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+		System.out.println("Get Employees based on grouping by city: ");
+		Map<Object, List<Employees>> employeesMap = employees.stream()
+				.collect(Collectors.groupingBy(p1 -> p1.getCity()));
+		System.out.println(employeesMap);
+
+		System.out.println(
+				"--------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+		System.out.println("Get Employees based on grouping by city and count: ");
+		Map<Object, Long> employeesMap1 = employees.stream()
+				.collect(Collectors.groupingBy(p1 -> p1.getCity(), Collectors.counting()));
+		System.out.println(employeesMap1);
 
 	}
 }
